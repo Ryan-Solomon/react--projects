@@ -29,8 +29,15 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-  color: white;
+  color: #d0d0d0;
   font-size: 2rem;
   letter-spacing: 0.2rem;
-  margin: 0px 1rem;
+  margin: 0px 2rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    transform: scale(0.98);
+    cursor: pointer;
+  }
 `;
