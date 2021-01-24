@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { isConstructorDeclaration } from 'typescript';
 import BirthdayReminderCard from '../components/BrithdayReminderCard';
 import Nav from '../components/Nav';
 import { TStatus, TUser } from '../types/types';
