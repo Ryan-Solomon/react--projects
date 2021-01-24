@@ -29,12 +29,28 @@ export default function BirthdayReminderPage() {
   if (status === 'LOADING') return <h1>Loading..</h1>;
   if (status === 'ERROR' || users.length === 0) return <h1>Error</h1>;
 
+  console.log(users);
+
   return (
-    <Container>
+    <>
       <Nav />
-      <h1>Birthday Reminder</h1>
-    </Container>
+      <Container>
+        <Title>{users.length} birthdays today</Title>
+        <ClearButton>Clear Reminders</ClearButton>
+      </Container>
+    </>
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  background: #fff;
+`;
+
+const Title = styled.h2`
+  color: #333;
+`;
+
+const ClearButton = styled.button`
+  background: #222;
+  color: #fff;
+`;
