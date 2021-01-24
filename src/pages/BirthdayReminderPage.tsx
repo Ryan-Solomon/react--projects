@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { isConstructorDeclaration } from 'typescript';
+import BirthdayReminderCard from '../components/BrithdayReminderCard';
 import Nav from '../components/Nav';
 import { TStatus, TUser } from '../types/types';
 
@@ -36,6 +37,9 @@ export default function BirthdayReminderPage() {
       <Nav />
       <Container>
         <Title>{users.length} birthdays today</Title>
+        {users.map((user) => (
+          <BirthdayReminderCard key={user.id} user={user} />
+        ))}
         <ClearButton>Clear Reminders</ClearButton>
       </Container>
     </>
