@@ -17,7 +17,7 @@ export default function Nav() {
 }
 
 const NavContainer = styled.nav`
-  background: #444;
+  background: #1a1a1a;
   padding: 1.5rem;
   box-shadow: 2px 2px 10px #222;
 `;
