@@ -2,13 +2,19 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import BirthdayReminderPage from './pages/BirthdayReminderPage';
 
 function App() {
   return (
     <Router>
-      <Route exact path='/'>
-        <HomePage />
-      </Route>
+      <Switch>
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+        <Route exact path='/birthday'>
+          <BirthdayReminderPage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
