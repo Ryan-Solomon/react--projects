@@ -11,6 +11,9 @@ export default function Nav() {
         <Link to='/birthday'>
           <NavItem>Birthday Reminder</NavItem>
         </Link>
+        <Link to='/tours'>
+          <NavItem>Tours</NavItem>
+        </Link>
       </NavList>
     </NavContainer>
   );
