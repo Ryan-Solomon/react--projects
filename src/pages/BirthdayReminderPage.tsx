@@ -28,7 +28,7 @@ export default function BirthdayReminderPage() {
   }, []);
 
   if (status === 'LOADING') return <h1>Loading..</h1>;
-  if (status === 'ERROR' || users.length === 0) return <h1>Error</h1>;
+  if (status === 'ERROR') return <h1>Error</h1>;
 
   console.log(users);
 
@@ -40,7 +40,7 @@ export default function BirthdayReminderPage() {
         {users.map((user) => (
           <BirthdayReminderCard key={user.id} user={user} />
         ))}
-        <ClearButton>Clear Reminders</ClearButton>
+        <ClearButton onClick={() => setUsers([])}>Clear Reminders</ClearButton>
       </Container>
     </>
   );
