@@ -1,8 +1,18 @@
+import { SpawnSyncOptionsWithStringEncoding } from 'child_process';
+
 export type TUser = {
   id: number;
   name: string;
   username: string;
   email: string;
+};
+
+export type TTour = {
+  id: string;
+  image: string;
+  info: string;
+  name: string;
+  price: string;
 };
 
 export type TStatus = 'LOADING' | 'ERROR' | 'FULFILLED';

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { TStatus } from '../types/types';
+import Tour from '../components/Tour';
+import { TStatus, TTour } from '../types/types';
 const url = 'https://course-api.com/react-tours-project';
 
 export default function ToursPage() {
-  const [tours, setTours] = useState<any>();
+  const [tours, setTours] = useState<TTour[]>([]);
   const [status, setStatus] = useState<TStatus>('LOADING');
 
   useEffect(() => {
@@ -16,7 +17,8 @@ export default function ToursPage() {
           throw new Error('Res status not 200');
         }
         const data = await res.json();
-        console.log(data);
+        setTours(data);
+        setStatus('FULFILLED');
       } catch (error) {
         setStatus('ERROR');
         console.error(error.message);
@@ -25,5 +27,21 @@ export default function ToursPage() {
     getTours();
   }, []);
 
-  return <h1>Tours</h1>;
+  if (status === 'LOADING') return <h1>Loading..</h1>;
+  if (status === 'ERROR') return <h1>Error</h1>;
+
+  return (
+    <TourContainer>
+      <TourTitle>Our Tours</TourTitle>
+      {tours.map((tour) => (
+        <Tour key={tour.id} tour={tour} />
+      ))}
+    </TourContainer>
+  );
 }
+
+const TourContainer = styled.div``;
+
+const TourTitle = styled.h1`
+  color: #fff;
+`;

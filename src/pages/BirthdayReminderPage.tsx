@@ -30,8 +30,6 @@ export default function BirthdayReminderPage() {
   if (status === 'LOADING') return <h1>Loading..</h1>;
   if (status === 'ERROR') return <h1>Error</h1>;
 
-  console.log(users);
-
   return (
     <>
       <Nav />
