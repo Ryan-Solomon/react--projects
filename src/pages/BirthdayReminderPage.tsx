@@ -6,7 +6,7 @@ import { TStatus, TUser } from '../types/types';
 
 export default function BirthdayReminderPage() {
   const [status, setStatus] = useState<TStatus>('LOADING');
-  const [users, setUsers] = useState<TUser[]>();
+  const [users, setUsers] = useState<TUser[]>([]);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -25,6 +25,9 @@ export default function BirthdayReminderPage() {
     };
     getUsers();
   }, []);
+
+  if (status === 'LOADING') return <h1>Loading..</h1>;
+  if (status === 'ERROR' || users.length === 0) return <h1>Error</h1>;
 
   return (
     <Container>
