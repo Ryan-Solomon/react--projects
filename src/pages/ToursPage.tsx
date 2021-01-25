@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Nav from '../components/Nav';
 import Tour from '../components/Tour';
 import { TStatus, TTour } from '../types/types';
 const url = 'https://course-api.com/react-tours-project';
@@ -31,12 +32,15 @@ export default function ToursPage() {
   if (status === 'ERROR') return <h1>Error</h1>;
 
   return (
-    <TourContainer>
-      <TourTitle>Our Tours</TourTitle>
-      {tours.map((tour) => (
-        <Tour key={tour.id} tour={tour} />
-      ))}
-    </TourContainer>
+    <>
+      <Nav />
+      <TourContainer>
+        <TourTitle>Our Tours</TourTitle>
+        {tours.map((tour) => (
+          <Tour key={tour.id} tour={tour} />
+        ))}
+      </TourContainer>
+    </>
   );
 }
 
