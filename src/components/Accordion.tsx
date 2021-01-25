@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
 import useSWR from 'swr';
@@ -6,7 +7,7 @@ import AccItem from './AccItem';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 // @ts-ignore
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = (...args) => axios.get(...args).then((res) => res.data);
 
 export default function Accordion() {
   const { data, error } = useSWR<TAccInfo[]>(url, fetcher);
