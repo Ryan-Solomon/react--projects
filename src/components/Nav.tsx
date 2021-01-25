@@ -17,6 +17,9 @@ export default function Nav() {
         <Link to='/movies'>
           <NavItem>Movies</NavItem>
         </Link>
+        <Link to='/accordion'>
+          <NavItem>Accordion</NavItem>
+        </Link>
       </NavList>
     </NavContainer>
   );
