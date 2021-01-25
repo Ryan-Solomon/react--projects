@@ -10,17 +10,32 @@ export default function Movie({ movie }: TProps) {
   console.log(poster_path);
   return (
     <MovieContainer>
-      <MovieTitle>{title}</MovieTitle>
       <MovieImage
         src={`https://image.tmdb.org/t/p/w500${poster_path}`}
         alt='movie'
       />
-      <MovieVoteText>Vote Average: {vote_average}</MovieVoteText>
+      <MovieDetails>
+        <MovieTitle>{title}</MovieTitle>
+        <MovieVoteText>Vote Average: {vote_average}</MovieVoteText>
+      </MovieDetails>
     </MovieContainer>
   );
 }
 
-const MovieContainer = styled.div``;
+const MovieDetails = styled.div`
+  display: none;
+  position: absolute;
+  bottom: 0rem;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.8);
+`;
+
+const MovieContainer = styled.div`
+  position: relative;
+  &:hover ${MovieDetails} {
+    display: block;
+  }
+`;
 
 const MovieImage = styled.img`
   width: 100%;

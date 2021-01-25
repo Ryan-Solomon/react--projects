@@ -13,16 +13,18 @@ export default function Movies() {
   if (!data) return <h1>Loading...</h1>;
   if (error) return <h1>Error</h1>;
   return (
-    <MoviesContainer>
-      <h1>Movies</h1>
-      {data.results.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
-    </MoviesContainer>
+    <>
+      <MoviesContainer>
+        {data.results.map((movie) => (
+          <Movie key={movie.id} movie={movie} />
+        ))}
+      </MoviesContainer>
+    </>
   );
 }
 
 const MoviesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4rem;
 `;
