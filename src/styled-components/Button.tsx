@@ -24,6 +24,28 @@ type StyledButtonProps = {
 };
 
 const StyledButton = styled.button<StyledButtonProps>`
+  padding: 1rem;
+
   ${(props) =>
-    props.size === 'large' ? css`` : props.size === 'medium' ? css`` : css``}
+    props.size === 'large'
+      ? css`
+          font-size: 24px;
+        `
+      : props.size === 'medium'
+      ? css`
+          font-size: 16px;
+        `
+      : css`
+          font-size: 10px;
+        `}
+  ${(props) =>
+    props.color === 'dark'
+      ? css`
+          color: 'white';
+          background: 'black';
+        `
+      : css`
+          color: 'black';
+          background: 'white';
+        `}
 `;
