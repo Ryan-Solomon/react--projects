@@ -11,7 +11,10 @@ export default function Movie({ movie }: TProps) {
   return (
     <MovieContainer>
       <MovieTitle>{title}</MovieTitle>
-      <MovieImage src={poster_path} alt='movie' />
+      <MovieImage
+        src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+        alt='movie'
+      />
       <MovieVoteText>Vote Average: {vote_average}</MovieVoteText>
     </MovieContainer>
   );
@@ -19,7 +22,10 @@ export default function Movie({ movie }: TProps) {
 
 const MovieContainer = styled.div``;
 
-const MovieImage = styled.img``;
+const MovieImage = styled.img`
+  width: 100%;
+  object-fit: cover;
+`;
 
 const MovieTitle = styled.h2`
   color: white;
