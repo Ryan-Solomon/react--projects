@@ -1,10 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
+import Movies from '../components/Movies';
+import Nav from '../components/Nav';
 
 export default function MoviesPage() {
   return (
-    <MoviesPageContainer>
-      <h1>Movies Page</h1>
-    </MoviesPageContainer>
+    <>
+      <Nav />
+      <Movies />
+    </>
   );
 }
 
