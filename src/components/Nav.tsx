@@ -14,6 +14,9 @@ export default function Nav() {
         <Link to='/tours'>
           <NavItem>Tours</NavItem>
         </Link>
+        <Link to='/movies'>
+          <NavItem>Movies</NavItem>
+        </Link>
       </NavList>
     </NavContainer>
   );
