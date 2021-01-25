@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Button from '../styled-components/Button';
 import { TTour } from '../types/types';
 
 type TProps = {
@@ -17,9 +18,12 @@ export default function Tour({ tour }: TProps) {
         <TourHeading>{name}</TourHeading>
         <TourInfo>{info}</TourInfo>
       </TourDetails>
-      <RemoveTourButton onClick={() => setShow(false)}>
-        Not Interested
-      </RemoveTourButton>
+      <Button
+        color='dark'
+        size='small'
+        text='Not Interested'
+        onClick={() => setShow(false)}
+      />
     </TourContainer>
   );
 }
