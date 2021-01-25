@@ -32,6 +32,7 @@ const MovieDetails = styled.div`
 
 const MovieContainer = styled.div`
   position: relative;
+  box-shadow: 2px 2px 10px grey;
   &:hover ${MovieDetails} {
     display: block;
   }
