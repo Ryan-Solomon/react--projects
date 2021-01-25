@@ -1,6 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import useSWR from 'swr';
 import { TAccInfo } from '../types/types';
+import AccItem from './AccItem';
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 // @ts-ignore
@@ -15,11 +17,9 @@ export default function Accordion() {
     <AccordionContainer>
       <AccordionHeader>This is my accordion</AccordionHeader>
       <AccordionItemsContainer>
-        <h1>Item</h1>
-        <h1>Item</h1>
-        <h1>Item</h1>
-        <h1>Item</h1>
-        <h1>Item</h1>
+        {posts.map((item) => (
+          <AccItem item={item} key={item.id} />
+        ))}
       </AccordionItemsContainer>
     </AccordionContainer>
   );
@@ -31,11 +31,12 @@ const AccordionContainer = styled.div`
   width: 60vw;
   margin: auto;
   margin-top: 5rem;
+  margin-bottom: 5rem;
 `;
 
 const AccordionHeader = styled.h2`
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1rem;
   color: #dcdcdc;
 `;
