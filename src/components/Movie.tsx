@@ -7,7 +7,7 @@ type TProps = {
 
 export default function Movie({ movie }: TProps) {
   const { poster_path, title, vote_average } = movie;
-  console.log(poster_path);
+
   return (
     <MovieContainer>
       <MovieImage

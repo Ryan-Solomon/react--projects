@@ -27,3 +27,9 @@ export type TMovie = {
 export type TUpcomingMoviesResponse = {
   results: TMovie[];
 };
+
+export type TAccInfo = {
+  id: number;
+  title: string;
+  body: string;
+};
