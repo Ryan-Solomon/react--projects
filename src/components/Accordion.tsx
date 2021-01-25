@@ -11,6 +11,34 @@ export default function Accordion() {
   if (!data) return <h1>Loading..</h1>;
   if (error) return <h1>Error</h1>;
   const posts = data.slice(0, 10);
-  console.log(posts);
-  return <h1>Acc</h1>;
+  return (
+    <AccordionContainer>
+      <AccordionHeader>This is my accordion</AccordionHeader>
+      <AccordionItemsContainer>
+        <h1>Item</h1>
+        <h1>Item</h1>
+        <h1>Item</h1>
+        <h1>Item</h1>
+        <h1>Item</h1>
+      </AccordionItemsContainer>
+    </AccordionContainer>
+  );
 }
+
+const AccordionContainer = styled.div`
+  background: #1c1c1c;
+  box-shadow: 2px 2px 10px grey;
+  width: 60vw;
+  margin: auto;
+  margin-top: 5rem;
+`;
+
+const AccordionHeader = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+`;
+
+const AccordionItemsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
