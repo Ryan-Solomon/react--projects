@@ -22,4 +22,7 @@ export default function Movies() {
   );
 }
 
-const MoviesContainer = styled.div``;
+const MoviesContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+`;
