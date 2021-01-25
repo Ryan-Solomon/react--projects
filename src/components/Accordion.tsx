@@ -36,9 +36,13 @@ const AccordionContainer = styled.div`
 const AccordionHeader = styled.h2`
   text-align: center;
   font-size: 2rem;
+  padding: 1rem;
+  color: #dcdcdc;
 `;
 
 const AccordionItemsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
