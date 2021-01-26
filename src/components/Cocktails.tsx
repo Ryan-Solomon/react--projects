@@ -1,4 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
+import { DrinkComponent } from './Drink';
 import { useCocktails } from './swr/useCocktails';
 
 export const Cocktails = () => {
@@ -11,7 +13,7 @@ export const Cocktails = () => {
       <h1>Drinks</h1>
       <DrinksContainer>
         {data?.map((drink) => (
-          <Drink key={drink.idDrink} drink={drink} />
+          <DrinkComponent key={drink.idDrink} drink={drink} />
         ))}
       </DrinksContainer>
     </>
