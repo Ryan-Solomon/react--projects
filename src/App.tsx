@@ -7,6 +7,7 @@ import ToursPage from './pages/ToursPage';
 import MoviesPage from './pages/MoviesPage';
 import AccordionPage from './pages/AccordionPage';
 import GroceryListPage from './pages/GroceryListPage';
+import { CocktailsPage } from './pages/CocktailsPage';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route exact path='/groceries'>
           <GroceryListPage />
+        </Route>
+        <Route exact path='/cocktails'>
+          <CocktailsPage />
         </Route>
       </Switch>
     </Router>

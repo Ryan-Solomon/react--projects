@@ -29,6 +29,9 @@ export default function Nav() {
             <Link to='/groceries'>
               <NavItem>Grocery List</NavItem>
             </Link>
+            <Link to='/cocktails'>
+              <NavItem>Cocktails</NavItem>
+            </Link>
           </NavList>
         </>
       ) : (
