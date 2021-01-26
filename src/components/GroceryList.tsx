@@ -18,6 +18,11 @@ export default function GroceryList() {
     setInput('');
   }
 
+  function removeItem(key: number) {
+    const newItems = items.filter((item) => item.key !== key);
+    setItems(newItems);
+  }
+
   return (
     <GroceryListContainer>
       <Form onSubmit={addItem}>
@@ -32,7 +37,7 @@ export default function GroceryList() {
         <Button type='submit'>Add Item</Button>
       </Form>
       {items?.map((item) => (
-        <GroceryItem key={item.key} item={item} />
+        <GroceryItem removeItem={removeItem} key={item.key} item={item} />
       ))}
     </GroceryListContainer>
   );

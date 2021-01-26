@@ -3,13 +3,14 @@ import { TItem } from './GroceryList';
 
 type TProps = {
   item: TItem;
+  removeItem: (key: number) => void;
 };
 
-export default function GroceryItem({ item }: TProps) {
+export default function GroceryItem({ item, removeItem }: TProps) {
   return (
     <Container>
       <ItemText>{item.text}</ItemText>
-      <RemoveButton>X</RemoveButton>
+      <RemoveButton onClick={() => removeItem(item.key)}>X</RemoveButton>
     </Container>
   );
 }
