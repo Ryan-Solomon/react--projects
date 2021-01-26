@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import GroceryItem from './GroceryItem';
 
@@ -9,11 +9,26 @@ export type TItem = {
 
 export default function GroceryList() {
   const [items, setItems] = useState<TItem[]>([]);
+  const [input, setInput] = useState('');
+
+  function addItem(e: FormEvent) {
+    e.preventDefault();
+    const newItems = [...items, { key: Math.random(), text: input }];
+    setItems(newItems);
+    setInput('');
+  }
+
   return (
     <GroceryListContainer>
-      <Form>
+      <Form onSubmit={addItem}>
         <Label htmlFor='grocery'>Add Grocery Item</Label>
-        <Input autoFocus id='grocery' type='text' />
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          autoFocus
+          id='grocery'
+          type='text'
+        />
         <Button type='submit'>Add Item</Button>
       </Form>
       {items?.map((item) => (
