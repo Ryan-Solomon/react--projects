@@ -23,6 +23,10 @@ export default function GroceryList() {
     setItems(newItems);
   }
 
+  function clearItems() {
+    setItems([]);
+  }
+
   return (
     <GroceryListContainer>
       <Form onSubmit={addItem}>
@@ -39,6 +43,7 @@ export default function GroceryList() {
       {items?.map((item) => (
         <GroceryItem removeItem={removeItem} key={item.key} item={item} />
       ))}
+      {items.length > 0 && <Button onClick={clearItems}>Clear Items</Button>}
     </GroceryListContainer>
   );
 }
