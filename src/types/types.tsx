@@ -33,3 +33,9 @@ export type TAccInfo = {
   title: string;
   body: string;
 };
+
+export type Drink = {
+  idDrink: string;
+  strDrinkThumb: string;
+  strDrink: string;
+};
