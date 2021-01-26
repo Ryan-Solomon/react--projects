@@ -1,6 +1,14 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import GroceryItem from './GroceryItem';
+
+export type TItem = {
+  key: number;
+  text: string;
+};
 
 export default function GroceryList() {
+  const [items, setItems] = useState<TItem[]>([]);
   return (
     <GroceryListContainer>
       <Form>
@@ -8,6 +16,9 @@ export default function GroceryList() {
         <Input autoFocus id='grocery' type='text' />
         <Button type='submit'>Add Item</Button>
       </Form>
+      {items?.map((item) => (
+        <GroceryItem key={item.key} item={item} />
+      ))}
     </GroceryListContainer>
   );
 }
@@ -45,7 +56,7 @@ const Button = styled.button`
   padding: 0.6rem;
   width: 30%;
   margin: auto;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   transition: all 0.2s ease;
 
   &:hover {
