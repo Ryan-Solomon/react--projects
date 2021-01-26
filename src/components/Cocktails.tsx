@@ -11,18 +11,9 @@ type Data = {
 };
 
 export const Cocktails = () => {
-  const [{ data, error, isLoading }, setCocktails] = useState<Data>({
-    data: undefined,
-    error: null,
-    isLoading: false,
-  });
   const [input, setInput] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    const { data, error, isLoading } = useCocktails(searchTerm);
-    setCocktails({ data, error, isLoading });
-  }, [searchTerm]);
+  const { data, error, isLoading } = useCocktails(searchTerm);
 
   if (isLoading) return <h1>loading..</h1>;
   if (error) return <h1>Error..</h1>;
