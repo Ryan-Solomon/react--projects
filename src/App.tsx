@@ -6,6 +6,7 @@ import BirthdayReminderPage from './pages/BirthdayReminderPage';
 import ToursPage from './pages/ToursPage';
 import MoviesPage from './pages/MoviesPage';
 import AccordionPage from './pages/AccordionPage';
+import GroceryListPage from './pages/GroceryListPage';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route exact path='/accordion'>
           <AccordionPage />
+        </Route>
+        <Route exact path='/groceries'>
+          <GroceryListPage />
         </Route>
       </Switch>
     </Router>

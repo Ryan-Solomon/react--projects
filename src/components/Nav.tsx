@@ -20,6 +20,9 @@ export default function Nav() {
         <Link to='/accordion'>
           <NavItem>Accordion</NavItem>
         </Link>
+        <Link to='/groceries'>
+          <NavItem>Grocery List</NavItem>
+        </Link>
       </NavList>
     </NavContainer>
   );
