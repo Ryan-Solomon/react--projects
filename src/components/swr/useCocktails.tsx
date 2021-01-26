@@ -7,7 +7,7 @@ type Response = {
   drinks: Drink[];
 };
 
-export const useCocktails = (searchTerm: string) => {
+export const useCocktails = (searchTerm: string = 'margarita') => {
   const url = `${baseUrl}${searchTerm}`;
   const { data, error } = useSWR<Response>(url, fetcher);
 
