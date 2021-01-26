@@ -5,7 +5,6 @@ export default function HomePage() {
   return (
     <HomeContainer>
       <Nav />
-      <h1>Home Page</h1>
     </HomeContainer>
   );
 }
