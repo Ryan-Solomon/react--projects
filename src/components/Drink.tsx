@@ -5,17 +5,24 @@ import { Drink } from '../types/types';
 
 type Props = {
   drink: Drink;
+  isInCart?: boolean;
 };
 
-export const DrinkComponent: FC<Props> = ({ drink }) => {
+export const DrinkComponent: FC<Props> = ({ drink, isInCart = false }) => {
   const { strDrink, strDrinkThumb } = drink;
-  const { addToCart } = useCartContext();
+  const { addToCart, removeFromCart } = useCartContext();
 
   return (
     <DrinkContainer>
       <DrinkImage src={strDrinkThumb} alt='drink' />
       <DrinkTitle>{strDrink}</DrinkTitle>
-      <AddToCart onClick={() => addToCart(drink)}>Add To Cart</AddToCart>
+      {isInCart ? (
+        <AddToCart onClick={() => removeFromCart(drink.idDrink)}>
+          Remove From Cart
+        </AddToCart>
+      ) : (
+        <AddToCart onClick={() => addToCart(drink)}>Add To Cart</AddToCart>
+      )}
     </DrinkContainer>
   );
 };

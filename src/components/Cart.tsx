@@ -1,5 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import { useCartContext } from '../context/cartContext';
+import { DrinkComponent as Drink } from './Drink';
 
 export const Cart = () => {
   const { items } = useCartContext();
@@ -8,10 +10,13 @@ export const Cart = () => {
   return (
     <CartContainer>
       {items.map((item) => (
-        <h1 key={item.idDrink}>{item.strDrink}</h1>
+        <Drink isInCart={true} drink={item} key={item.idDrink} />
       ))}
     </CartContainer>
   );
 };
 
-const CartContainer = styled.div``;
+const CartContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+`;
