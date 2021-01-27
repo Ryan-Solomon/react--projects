@@ -39,3 +39,10 @@ export type Drink = {
   strDrinkThumb: string;
   strDrink: string;
 };
+
+export type TCartContext = {
+  items: Drink[];
+  addToCart: (item: Drink) => void;
+  removeFromCart: (id: string) => void;
+  clearCart: () => void;
+};

@@ -1,12 +1,20 @@
 import React, { createContext, FC, ReactNode, useContext } from 'react';
+import { Drink, TCartContext } from '../types/types';
 
-const CartContext = createContext({});
+const initialContextState: TCartContext = {
+  items: [],
+  addToCart: (i: Drink) => null,
+  removeFromCart: (i: string) => null,
+  clearCart: () => null,
+};
 
-const ContextProvider: FC<ReactNode> = ({ children }) => {
+const CartContext = createContext(initialContextState);
+
+export const ContextProvider: FC<ReactNode> = ({ children }) => {
   const value = {};
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
-const useCartContext = () => {
+export const useCartContext = () => {
   return useContext(CartContext);
 };
