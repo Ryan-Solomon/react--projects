@@ -10,7 +10,21 @@ const initialContextState: TCartContext = {
 
 const CartContext = createContext(initialContextState);
 
+const cartReducer = (state: Drink[], action: any) => {
+  switch (action.type) {
+    case 'ADD':
+      return {};
+    case 'REMOVE':
+      return {};
+    case 'CLEAR':
+      return {};
+    default:
+      throw new Error('Action not supported');
+  }
+};
+
 export const ContextProvider: FC<ReactNode> = ({ children }) => {
+  const [items, setItems] = useReducer<Drink[]>(cartReducer, []);
   const value = {};
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
