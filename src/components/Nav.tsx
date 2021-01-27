@@ -59,8 +59,8 @@ const NavContainer = styled.nav<TNavProps>`
   box-shadow: ${({ show }) => (show ? '2px 2px 10px #c5b1b1' : '')};
   background: ${({ show }) => (show ? '#1a1a1a' : '')};
   width: 32rem;
-  position: absolute;
   margin-left: ${({ show }) => (show ? '' : '2rem')};
+  position: absolute;
 `;
 
 const Toggle = styled.div`

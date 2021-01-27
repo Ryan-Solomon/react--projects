@@ -10,40 +10,44 @@ import GroceryListPage from './pages/GroceryListPage';
 import { CocktailsPage } from './pages/CocktailsPage';
 import { CartPage } from './pages/CartPage';
 import { ImagesPage } from './pages/ImagesPage';
+import Nav from './components/Nav';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <HomePage />
-        </Route>
-        <Route exact path='/birthday'>
-          <BirthdayReminderPage />
-        </Route>
-        <Route exact path='/tours'>
-          <ToursPage />
-        </Route>
-        <Route exact path='/movies'>
-          <MoviesPage />
-        </Route>
-        <Route exact path='/accordion'>
-          <AccordionPage />
-        </Route>
-        <Route exact path='/groceries'>
-          <GroceryListPage />
-        </Route>
-        <Route exact path='/cocktails'>
-          <CocktailsPage />
-        </Route>
-        <Route exact path='/cart'>
-          <CartPage />
-        </Route>
-        <Route exact path='/images'>
-          <ImagesPage />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
+          <Route exact path='/birthday'>
+            <BirthdayReminderPage />
+          </Route>
+          <Route exact path='/tours'>
+            <ToursPage />
+          </Route>
+          <Route exact path='/movies'>
+            <MoviesPage />
+          </Route>
+          <Route exact path='/accordion'>
+            <AccordionPage />
+          </Route>
+          <Route exact path='/groceries'>
+            <GroceryListPage />
+          </Route>
+          <Route exact path='/cocktails'>
+            <CocktailsPage />
+          </Route>
+          <Route exact path='/cart'>
+            <CartPage />
+          </Route>
+          <Route exact path='/images'>
+            <ImagesPage />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
