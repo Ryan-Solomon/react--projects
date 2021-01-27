@@ -32,6 +32,9 @@ export default function Nav() {
             <Link to='/cocktails'>
               <NavItem>Cocktails</NavItem>
             </Link>
+            <Link to='/cart'>
+              <NavItem>Cart</NavItem>
+            </Link>
           </NavList>
         </>
       ) : (

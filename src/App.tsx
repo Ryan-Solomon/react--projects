@@ -8,6 +8,7 @@ import MoviesPage from './pages/MoviesPage';
 import AccordionPage from './pages/AccordionPage';
 import GroceryListPage from './pages/GroceryListPage';
 import { CocktailsPage } from './pages/CocktailsPage';
+import { CartPage } from './pages/CartPage';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path='/cocktails'>
           <CocktailsPage />
+        </Route>
+        <Route exact path='/cart'>
+          <CartPage />
         </Route>
       </Switch>
     </Router>
