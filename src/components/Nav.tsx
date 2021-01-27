@@ -35,6 +35,9 @@ export default function Nav() {
             <Link to='/cart'>
               <NavItem>Cart</NavItem>
             </Link>
+            <Link to='/images'>
+              <NavItem>Images</NavItem>
+            </Link>
           </NavList>
         </>
       ) : (
