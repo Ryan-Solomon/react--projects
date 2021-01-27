@@ -4,7 +4,7 @@ import { useCartContext } from '../context/cartContext';
 import { DrinkComponent as Drink } from './Drink';
 
 export const Cart = () => {
-  const { items } = useCartContext();
+  const { items, clearCart } = useCartContext();
 
   if (items.length < 1) return <h1>No Items homie</h1>;
   return (
@@ -12,6 +12,7 @@ export const Cart = () => {
       {items.map((item) => (
         <Drink isInCart={true} drink={item} key={item.idDrink} />
       ))}
+      <button onClick={clearCart}>Clear</button>
     </CartContainer>
   );
 };
