@@ -45,8 +45,26 @@ const cartReducer = (state: Drink[], action: TAction): Drink[] => {
 const initialState: Drink[] = [];
 
 export const ContextProvider: FC<ReactNode> = ({ children }) => {
-  const [items, setItems] = useReducer(cartReducer, initialState);
-  const value = {};
+  const [items, dispatch] = useReducer(cartReducer, initialState);
+
+  const addItem = (item: Drink) => {
+    dispatch({ type: 'ADD', payload: item });
+  };
+
+  const removeItem = (id: string) => {
+    dispatch({ type: 'REMOVE', payload: id });
+  };
+
+  const clearItems = () => {
+    dispatch({ type: 'CLEAR' });
+  };
+
+  const value = {
+    items,
+    addToCart: addItem,
+    removeFromCart: removeItem,
+    clearCart: clearItems,
+  };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
