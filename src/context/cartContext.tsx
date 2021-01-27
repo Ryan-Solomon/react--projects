@@ -1,4 +1,10 @@
-import React, { createContext, FC, ReactNode, useContext } from 'react';
+import React, {
+  createContext,
+  FC,
+  ReactNode,
+  useContext,
+  useReducer,
+} from 'react';
 import { Drink, TCartContext } from '../types/types';
 
 const initialContextState: TCartContext = {
@@ -10,21 +16,36 @@ const initialContextState: TCartContext = {
 
 const CartContext = createContext(initialContextState);
 
-const cartReducer = (state: Drink[], action: any) => {
+type TAction =
+  | {
+      type: 'ADD';
+      payload: Drink;
+    }
+  | {
+      type: 'REMOVE';
+      payload: string;
+    }
+  | {
+      type: 'CLEAR';
+    };
+
+const cartReducer = (state: Drink[], action: TAction): Drink[] => {
   switch (action.type) {
     case 'ADD':
-      return {};
+      return [...state, action.payload];
     case 'REMOVE':
-      return {};
+      return [...state.filter((item) => item.idDrink !== action.payload)];
     case 'CLEAR':
-      return {};
+      return [];
     default:
       throw new Error('Action not supported');
   }
 };
 
+const initialState: Drink[] = [];
+
 export const ContextProvider: FC<ReactNode> = ({ children }) => {
-  const [items, setItems] = useReducer<Drink[]>(cartReducer, []);
+  const [items, setItems] = useReducer(cartReducer, initialState);
   const value = {};
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
