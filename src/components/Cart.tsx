@@ -8,12 +8,15 @@ export const Cart = () => {
 
   if (items.length < 1) return <h1>No Items homie</h1>;
   return (
-    <CartContainer>
-      {items.map((item) => (
-        <Drink isInCart={true} drink={item} key={item.idDrink} />
-      ))}
-      <button onClick={clearCart}>Clear</button>
-    </CartContainer>
+    <>
+      <CartContainer>
+        {items.map((item) => (
+          <Drink isInCart={true} drink={item} key={item.idDrink} />
+        ))}
+        <button onClick={clearCart}>Clear</button>
+      </CartContainer>
+      <h1>Item Count: {items.length}</h1>
+    </>
   );
 };
 
