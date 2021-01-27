@@ -44,7 +44,7 @@ const cartReducer = (state: Drink[], action: TAction): Drink[] => {
 
 const initialState: Drink[] = [];
 
-export const ContextProvider: FC<ReactNode> = ({ children }) => {
+export const CartContextProvider: FC<ReactNode> = ({ children }) => {
   const [items, dispatch] = useReducer(cartReducer, initialState);
 
   const addItem = (item: Drink) => {

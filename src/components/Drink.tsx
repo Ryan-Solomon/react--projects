@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { useCartContext } from '../context/cartContext';
 import { Drink } from '../types/types';
 
 type Props = {
@@ -8,12 +9,13 @@ type Props = {
 
 export const DrinkComponent: FC<Props> = ({ drink }) => {
   const { strDrink, strDrinkThumb } = drink;
+  const { addToCart } = useCartContext();
 
   return (
     <DrinkContainer>
       <DrinkImage src={strDrinkThumb} alt='drink' />
       <DrinkTitle>{strDrink}</DrinkTitle>
-      <AddToCart>Add To Cart</AddToCart>
+      <AddToCart onClick={() => addToCart(drink)}>Add To Cart</AddToCart>
     </DrinkContainer>
   );
 };
